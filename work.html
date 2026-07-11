@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>[Your Name] — Developer</title>
+    <title>Jeremy Zelken - Work</title>
     <meta
       name="description"
-      content="[Your Name] — Full Stack Developer Portfolio"
+      content="Work"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
@@ -357,9 +357,6 @@
     </style>
   </head>
   <body>
-    <!-- cursors -->
-    <div class="cursor" id="cursor"></div>
-    <div class="cursor-ring" id="cursor-ring"></div>
 
     <!-- ─── NAV ────────────────────────────────────────────── -->
     <nav class="nav">
@@ -462,8 +459,7 @@
     <footer class="footer">
       <div class="footer-inner">
         <div class="footer-left">
-          © 2026 [your_name] &mdash; template by
-          <a href="https://kayspace.vercel.app" target="_blank">kayspace</a>,
+          © 2026 Jeremy Zelken &mdash; portfolio
           restyled
         </div>
         <span class="footer-right"
@@ -508,31 +504,6 @@
       /* GSAP */
       gsap.registerPlugin(ScrollTrigger);
 
-      /* hero entrance — staggered */
-      const heroTl = gsap.timeline({ defaults: { ease: "power3.out" } });
-      heroTl
-        .to(".greeting", { opacity: 1, y: 0, duration: 0.7 }, 0.2)
-        .to(".avail-badge", { opacity: 1, y: 0, duration: 0.6 }, 0.35)
-        .to(".hero-title", { opacity: 1, y: 0, duration: 0.9 }, 0.45)
-        .to(".hero-role", { opacity: 1, y: 0, duration: 0.6 }, 0.7)
-        .to(".hero-desc", { opacity: 1, y: 0, duration: 0.6 }, 0.8)
-        .to(".hero-actions", { opacity: 1, y: 0, duration: 0.6 }, 0.95)
-        .to(".scroll-hint", { opacity: 1, y: 0, duration: 0.5 }, 1.1);
-
-      /* set initial states */
-      gsap.set(
-        [
-          ".greeting",
-          ".avail-badge",
-          ".hero-title",
-          ".hero-role",
-          ".hero-desc",
-          ".hero-actions",
-          ".scroll-hint",
-        ],
-        { y: 18 },
-      );
-
       /* work items */
       document.querySelectorAll(".work-item").forEach((el, i) => {
         gsap.to(el, {
@@ -542,19 +513,6 @@
           ease: "power2.out",
           delay: i * 0.07,
           scrollTrigger: { trigger: el, start: "top 88%" },
-        });
-      });
-
-      /* skills + about + contact */
-      [".skills-grid", ".about-grid", ".contact-inner"].forEach((sel) => {
-        const el = document.querySelector(sel);
-        if (!el) return;
-        gsap.to(el, {
-          opacity: 1,
-          y: 0,
-          duration: 0.7,
-          ease: "power2.out",
-          scrollTrigger: { trigger: el, start: "top 85%" },
         });
       });
 
