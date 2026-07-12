@@ -179,22 +179,22 @@
       }
 
 
-      /* ─── WORK ────────────────────────────────────────────── */
-      #work {
+      /* ─── WRITING ────────────────────────────────────────────── */
+      #writing {
         border-top: 1px solid var(--border);
       }
 
-      .work-list {
+      .writing-list {
         display: flex;
         flex-direction: column;
         margin-top: 2rem;
       }
-      .work-item {
+      .writing-item {
         border-bottom: 1px solid var(--border);
         opacity: 0;
         transform: translateY(20px);
       }
-      .work-link {
+      .writing-link {
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -204,57 +204,57 @@
         gap: 1rem;
         transition: padding-left 0.25s var(--ease);
       }
-      .work-link:hover {
+      .writing-link:hover {
         padding-left: 8px;
       }
-      .work-link:hover .work-name {
+      .writing-link:hover .writing-name {
         color: var(--accent);
       }
-      .work-link:hover .work-arrow {
+      .writing-link:hover .writing-arrow {
         opacity: 1;
         transform: translateX(0);
       }
-      .work-left {
+      .writing-left {
         flex: 1;
       }
-      .work-num {
+      .writing-num {
         font-size: 10px;
         color: var(--text-dim);
         letter-spacing: 0.08em;
         margin-bottom: 4px;
       }
-      .work-name {
+      .writing-name {
         font-family: var(--serif);
         font-size: clamp(1.2rem, 2.5vw, 1.7rem);
         font-weight: 400;
         color: var(--text);
         transition: color 0.2s;
       }
-      .work-name em {
+      .writing-name em {
         font-style: italic;
         color: var(--text-muted);
       }
-      .work-right {
+      .writing-right {
         display: flex;
         flex-direction: column;
         align-items: flex-end;
         gap: 4px;
         flex-shrink: 0;
       }
-      .work-stack {
+      .writing-stack {
         font-size: 11px;
         color: var(--text-muted);
       }
-      .work-meta {
+      .writing-meta {
         display: flex;
         align-items: center;
         gap: 8px;
       }
-      .work-year {
+      .writing-year {
         font-size: 11px;
         color: var(--text-dim);
       }
-      .work-status {
+      .writing-status {
         font-size: 10px;
         letter-spacing: 0.06em;
         padding: 2px 8px;
@@ -262,17 +262,17 @@
         border: 1px solid var(--border);
         color: var(--text-muted);
       }
-      .work-status.live {
+      .writing-status.live {
         color: var(--green);
         border-color: rgba(74, 222, 128, 0.25);
         background: var(--green-glow);
       }
-      .work-status.wip {
+      .writing-status.wip {
         color: #fbbf24;
         border-color: rgba(251, 191, 36, 0.2);
         background: rgba(251, 191, 36, 0.08);
       }
-      .work-arrow {
+      .writing-arrow {
         font-size: 18px;
         color: var(--text-muted);
         opacity: 0;
@@ -320,7 +320,7 @@
         color: var(--text);
       }
 
-      /* ─── EDITORIAL WORK LIST ───────────────────────────── */
+      /* ─── EDITORIAL writing LIST ───────────────────────────── */
 
 .editorial-group {
   margin-bottom: 5rem;
@@ -392,7 +392,7 @@
           grid-template-columns: 1fr;
           gap: 2.5rem;
         }
-        .work-right {
+        .writing-right {
           display: none;
         }
         .nav-links {
@@ -418,7 +418,7 @@
     </a>
 
     <ul class="nav-links">
-      <li><a href="work.html">Writing</a></li>
+      <li><a href="writing.html">Writing</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
@@ -426,7 +426,7 @@
   </div>
 </nav>
 
-    <!-- ─── WORK ───────────────────────────────────────────── -->
+    <!-- ─── writing ───────────────────────────────────────────── -->
 <section id="Writing" class="section">
 
   <div class="container">
@@ -582,8 +582,8 @@
       /* GSAP */
       gsap.registerPlugin(ScrollTrigger);
 
-      /* work items */
-      document.querySelectorAll(".work-item").forEach((el, i) => {
+      /* writing items */
+      document.querySelectorAll(".writing-item").forEach((el, i) => {
         gsap.to(el, {
           opacity: 1,
           y: 0,
