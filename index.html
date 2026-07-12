@@ -131,6 +131,11 @@
         gap: 8px;
       }
 
+/* Hide logo only on homepage */
+.homepage-nav .nav-logo {
+  visibility: hidden;
+}
+
       .nav-links {
         display: flex;
         gap: 0;
@@ -193,9 +198,9 @@
 
 .home-center h1 {
   font-family: var(--serif);
-  font-size: clamp(4rem, 10vw, 8rem);
+  font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 400;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.03em;
   color: var(--text);
 }
 
@@ -287,11 +292,10 @@
     <div class="cursor-ring" id="cursor-ring"></div>
 
     <!-- ─── NAV ────────────────────────────────────────────── -->
-<nav class="nav">
+<nav class="nav homepage-nav">
   <div class="nav-inner">
 
     <a href="index.html" class="nav-logo">
-      Jeremy Zelken
     </a>
 
     <ul class="nav-links">
