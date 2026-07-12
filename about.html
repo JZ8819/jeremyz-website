@@ -263,6 +263,28 @@
         color: var(--text-muted);
       }
 
+      /* ─── RANDOM ACTIVITY ─────────────────────────────────── */
+      
+      .random-activity {
+  margin-top: 1rem;
+  color: var(--text-muted);
+  font-style: italic;
+  opacity: 0;
+  animation: fadeInActivity 1s ease forwards;
+  animation-delay: 1.2s;
+}
+
+@keyframes fadeInActivity {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
       /* ─── FOOTER ──────────────────────────────────────────── */
       .footer {
         border-top: 1px solid var(--border);
@@ -412,8 +434,9 @@
             </p>
 <p class="about-sub">
   What I'm probably doing right now...
-  <span id="random-activity"></span>
 </p>
+
+<p class="random-activity" id="random-activity"></p>
           </div>
         </div>
       </div>
@@ -494,7 +517,11 @@
 
 const randomActivity = activities[Math.floor(Math.random() * activities.length)];
 
-document.getElementById("random-activity").textContent = randomActivity;
+const activityElement = document.getElementById("random-activity");
+
+if (activityElement) {
+  activityElement.textContent = randomActivity;
+}
     </script>
   </body>
 </html>
