@@ -410,17 +410,10 @@
               <span>I am a Chicago-born writer, pursuing my fourth year of undergraduate 
         studies in English at McGill University in Montreal.</span> I am currently an editor for <em>Scrivener Creative Review</em> and <em>The Veg Magazine</em>. 
             </p>
-            <p class="about-p">When i'm not writing i'm...</p>
-            <div class="about-hobbies">
-              <div class="about-hobby">Watching Chicago Blackhawks Highlights</div>
-              <div class="about-hobby">Listening to a Bill Evans Trio Live album on Vinyl</div>
-              <div class="about-hobby">Making coffee in my moka pot</div>
-              <div class="about-hobby">
-                Trying (and failing) to learn a Neil Young song on guitar
-              </div>
-              <div class="about-hobby">
-                Waiting for my Banana Bread to bake in the oven
-              </div>
+<p class="about-sub">
+  What I'm probably doing right now...
+  <span id="random-activity"></span>
+</p>
           </div>
         </div>
       </div>
@@ -490,6 +483,18 @@
         { threshold: 0.4 },
       );
       sections.forEach((s) => io.observe(s));
+
+      const activities = [
+  "Watching Chicago Blackhawks Highlights",
+  "Listening to a Bill Evans album on Vinyl",
+  "Making coffee in my moka pot",
+  "Trying (and failing) to learn a Neil Young song on guitar",
+  "Waiting for my Banana Bread to bake in the oven"
+];
+
+const randomActivity = activities[Math.floor(Math.random() * activities.length)];
+
+document.getElementById("random-activity").textContent = randomActivity;
     </script>
   </body>
 </html>
