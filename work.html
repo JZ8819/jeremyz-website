@@ -320,6 +320,63 @@
         color: var(--text);
       }
 
+      /* ─── EDITORIAL WORK LIST ───────────────────────────── */
+
+.editorial-group {
+  margin-bottom: 5rem;
+}
+
+.editorial-heading {
+  font-family: var(--mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+.editorial-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 2rem;
+  padding: 1.25rem 0;
+  border-top: 1px solid var(--border);
+}
+
+.editorial-item:last-child {
+  border-bottom: 1px solid var(--border);
+}
+
+.editorial-left {
+  flex: 1;
+}
+
+.editorial-title {
+  display: inline;
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  color: var(--text);
+  text-decoration: none;
+  transition: opacity .2s;
+}
+
+.editorial-title:hover {
+  opacity: .6;
+}
+
+.editorial-publication {
+  font-style: italic;
+  color: var(--text-muted);
+  margin-left: .35rem;
+}
+
+.editorial-date {
+  font-size: .9rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
       /* ─── RESPONSIVE ──────────────────────────────────────── */
       @media (max-width: 700px) {
         .nav {
@@ -366,123 +423,110 @@
     </nav>
 
     <!-- ─── WORK ───────────────────────────────────────────── -->
- <div class="section-label">Articles</div>
+<section id="work" class="section">
 
-<div class="work-list">
+  <div class="container">
 
-  <div class="work-item">
-    <a href="https://botpress.com/blog/customer-service-roi" target="_blank" class="work-link">
-      <div class="work-left">
-        <div class="work-num">07</div>
-        <div class="work-name">
-          Customer Service ROI <em>Botpress</em>
+    <div class="editorial-group">
+
+      <div class="editorial-heading">Journalism</div>
+
+      <div class="editorial-item">
+        <div class="editorial-left">
+          <a class="editorial-title"
+             href="https://botpress.com/blog/customer-service-roi"
+             target="_blank">
+            Customer Service ROI
+          </a>
+          <span class="editorial-publication">Botpress</span>
         </div>
+        <div class="editorial-date">2026</div>
       </div>
-      <div class="work-right">
-        <div class="work-year">2026</div>
+
+      <div class="editorial-item">
+        <div class="editorial-left">
+          <a class="editorial-title"
+             href="https://botpress.com/blog/how-to-improve-csat"
+             target="_blank">
+            How to Improve CSAT
+          </a>
+          <span class="editorial-publication">Botpress</span>
+        </div>
+        <div class="editorial-date">2026</div>
       </div>
-      <div class="work-arrow">↗</div>
-    </a>
+
+      <div class="editorial-item">
+        <div class="editorial-left">
+          <a class="editorial-title"
+             href="https://botpress.com/blog/how-to-build-a-customer-support-team"
+             target="_blank">
+            How to Build a Customer Support Team
+          </a>
+          <span class="editorial-publication">Botpress</span>
+        </div>
+        <div class="editorial-date">2026</div>
+      </div>
+
+      <div class="editorial-item">
+        <div class="editorial-left">
+          <a class="editorial-title"
+             href="https://www.thetribune.ca/a-e/film-and-tv/jafar-panahi-breaks-his-enforced-silence-with-a-defiant-new-film-11112025/"
+             target="_blank">
+            Jafar Panahi Breaks His Enforced Silence with a Defiant New Film
+          </a>
+          <span class="editorial-publication">The Tribune</span>
+        </div>
+        <div class="editorial-date">November 2025</div>
+      </div>
+
+      <div class="editorial-item">
+        <div class="editorial-left">
+          <a class="editorial-title"
+             href="https://www.thetribune.ca/a-e/books/what-we-liked-reading-this-fall-break-21102025/"
+             target="_blank">
+            What We Liked Reading This Fall Break
+          </a>
+          <span class="editorial-publication">The Tribune</span>
+        </div>
+        <div class="editorial-date">October 2025</div>
+      </div>
+
+      <div class="editorial-item">
+        <div class="editorial-left">
+          <a class="editorial-title"
+             href="https://www.thetribune.ca/a-e/david-lynch-at-midnight-01042025/"
+             target="_blank">
+            David Lynch at Midnight
+          </a>
+          <span class="editorial-publication">The Tribune</span>
+        </div>
+        <div class="editorial-date">April 2025</div>
+      </div>
+
+    </div>
+
+
+    <div class="editorial-group">
+
+      <div class="editorial-heading">Creative Writing</div>
+
+      <div class="editorial-item">
+        <div class="editorial-left">
+          <a class="editorial-title"
+             href="https://drive.google.com/file/d/1eNPPnNjLw3jv3s2cvbqk6NNY2XzEJ9WC/view"
+             target="_blank">
+            [Title of Prose Piece]
+          </a>
+          <span class="editorial-publication">Personal Work</span>
+        </div>
+        <div class="editorial-date">2026</div>
+      </div>
+
+    </div>
+
   </div>
 
-  <div class="work-item">
-    <a href="https://botpress.com/blog/how-to-improve-csat" target="_blank" class="work-link">
-      <div class="work-left">
-        <div class="work-num">06</div>
-        <div class="work-name">
-          How to Improve CSAT <em>Botpress</em>
-        </div>
-      </div>
-      <div class="work-right">
-        <div class="work-year">2026</div>
-      </div>
-      <div class="work-arrow">↗</div>
-    </a>
-  </div>
-
-  <div class="work-item">
-    <a href="https://botpress.com/blog/how-to-build-a-customer-support-team" target="_blank" class="work-link">
-      <div class="work-left">
-        <div class="work-num">05</div>
-        <div class="work-name">
-          How to Build a Customer Support Team <em>Botpress</em>
-        </div>
-      </div>
-      <div class="work-right">
-        <div class="work-year">2026</div>
-      </div>
-      <div class="work-arrow">↗</div>
-    </a>
-  </div>
-
-  <div class="work-item">
-    <a href="https://www.thetribune.ca/a-e/film-and-tv/jafar-panahi-breaks-his-enforced-silence-with-a-defiant-new-film-11112025/" target="_blank" class="work-link">
-      <div class="work-left">
-        <div class="work-num">04</div>
-        <div class="work-name">
-          Jafar Panahi Breaks His Enforced Silence with a Defiant New Film <em>The Tribune</em>
-        </div>
-      </div>
-      <div class="work-right">
-        <div class="work-year">November 2025</div>
-      </div>
-      <div class="work-arrow">↗</div>
-    </a>
-  </div>
-
-  <div class="work-item">
-    <a href="https://www.thetribune.ca/a-e/books/what-we-liked-reading-this-fall-break-21102025/" target="_blank" class="work-link">
-      <div class="work-left">
-        <div class="work-num">03</div>
-        <div class="work-name">
-          What We Liked Reading This Fall Break <em>The Tribune</em>
-        </div>
-      </div>
-      <div class="work-right">
-        <div class="work-year">October 2025</div>
-      </div>
-      <div class="work-arrow">↗</div>
-    </a>
-  </div>
-
-  <div class="work-item">
-    <a href="https://www.thetribune.ca/a-e/david-lynch-at-midnight-01042025/" target="_blank" class="work-link">
-      <div class="work-left">
-        <div class="work-num">02</div>
-        <div class="work-name">
-          David Lynch at Midnight <em>The Tribune</em>
-        </div>
-      </div>
-      <div class="work-right">
-        <div class="work-year">April 2025</div>
-      </div>
-      <div class="work-arrow">↗</div>
-    </a>
-  </div>
-
-</div>
-
-<div class="section-label" style="margin-top:5rem;">Prose</div>
-
-<div class="work-list">
-
-  <div class="work-item">
-    <a href="https://drive.google.com/file/d/1eNPPnNjLw3jv3s2cvbqk6NNY2XzEJ9WC/view" target="_blank" class="work-link">
-      <div class="work-left">
-        <div class="work-num">01</div>
-        <div class="work-name">
-          [Title of Prose Piece] <em>Personal Work</em>
-        </div>
-      </div>
-      <div class="work-right">
-        <div class="work-year">2026</div>
-      </div>
-      <div class="work-arrow">↗</div>
-    </a>
-  </div>
-
-</div>
-
+</section>
     <!-- ─── JS ─────────────────────────────────────────────── -->
     <script>
       /* cursor */
