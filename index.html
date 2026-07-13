@@ -50,41 +50,6 @@
         /* cursor: none; */
       }
 
-      /* ─── CUSTOM CURSOR ───────────────────────────────────── */
-      /* .cursor {
-        position: fixed;
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-        background: var(--green);
-        pointer-events: none;
-        z-index: 9999;
-        transition:
-          transform 0.1s,
-          opacity 0.2s;
-        mix-blend-mode: difference;
-      }
-      .cursor-ring {
-        position: fixed;
-        width: 32px;
-        height: 32px;
-        border-radius: 50%;
-        border: 1px solid rgba(74, 222, 128, 0.35);
-        pointer-events: none;
-        z-index: 9998;
-        transition:
-          transform 0.18s var(--ease),
-          width 0.2s,
-          height 0.2s,
-          opacity 0.2s;
-      }
-      body:has(a:hover) .cursor-ring,
-      body:has(button:hover) .cursor-ring {
-        width: 48px;
-        height: 48px;
-        border-color: rgba(74, 222, 128, 0.5);
-      } */
-
       /* ─── GRAIN OVERLAY ───────────────────────────────────── */
       body::before {
         content: "";
@@ -215,8 +180,34 @@
   transition: opacity 0.3s ease;
 }
 
+  #enterButton{
+    opacity:0;
+    pointer-events:none;
+}
+
 .enter:hover {
   opacity: 0.5;
+}
+
+#line1,
+#line2,
+#line3{
+    font-family:var(--mono);
+    font-size:18px;
+    color:var(--text-muted);
+    min-height:24px;
+}
+
+#line2{
+    margin-bottom:.3rem;
+}
+
+#line3{
+    margin-top:1.5rem;
+}
+
+#name{
+    margin:0;
 }
 
       /* ─── FOOTER ──────────────────────────────────────────── */
@@ -287,9 +278,6 @@
     </style>
   </head>
   <body>
-    <!-- cursors -->
-    <div class="cursor" id="cursor"></div>
-    <div class="cursor-ring" id="cursor-ring"></div>
 
     <!-- ─── NAV ────────────────────────────────────────────── -->
 <nav class="nav homepage-nav">
@@ -308,17 +296,29 @@
 </nav>
 
     <!-- ─── HOME ───────────────────────────────────────────── -->
-    <section id="home" class="section">
-<div class="home-center">
+<section id="home" class="section">
 
-  <h1>Jeremy Zelken</h1>
+  <div class="home-center">
 
-  <a href="writing.html" class="enter">
-    enter
-  </a>
+    <div id="intro">
 
-</div>
-    </section>
+      <div id="line1"></div>
+
+      <div id="line2"></div>
+
+      <h1 id="name"></h1>
+
+      <div id="line3"></div>
+
+    </div>
+
+    <a href="writing.html" class="enter" id="enterButton">
+      enter
+    </a>
+
+  </div>
+
+</section>
 
     <!-- ─── FOOTER ─────────────────────────────────────────── -->
     <footer class="footer">
@@ -336,32 +336,6 @@
 
     <!-- ─── JS ─────────────────────────────────────────────── -->
     <script>
-      /* cursor */
-      const cursor = document.getElementById("cursor");
-      const ring = document.getElementById("cursor-ring");
-      let mx = 0,
-        my = 0,
-        rx = 0,
-        ry = 0;
-      document.addEventListener("mousemove", (e) => {
-        mx = e.clientX;
-        my = e.clientY;
-      });
-      (function loop() {
-        rx += (mx - rx) * 0.12;
-        ry += (my - ry) * 0.12;
-        cursor.style.transform = `translate(${mx - 4}px, ${my - 4}px)`;
-        ring.style.transform = `translate(${rx - 16}px, ${ry - 16}px)`;
-        requestAnimationFrame(loop);
-      })();
-      document.addEventListener("mouseleave", () => {
-        cursor.style.opacity = 0;
-        ring.style.opacity = 0;
-      });
-      document.addEventListener("mouseenter", () => {
-        cursor.style.opacity = 1;
-        ring.style.opacity = 1;
-      });
 
       /* GSAP */
       gsap.registerPlugin(ScrollTrigger);
@@ -399,6 +373,83 @@
         { threshold: 0.4 },
       );
       sections.forEach((s) => io.observe(s));
+
+const line1 = document.getElementById("line1");
+const line2 = document.getElementById("line2");
+const line3 = document.getElementById("line3");
+const name = document.getElementById("name");
+const enter = document.getElementById("enterButton");
+
+function wait(ms){
+    return new Promise(resolve=>setTimeout(resolve,ms));
+}
+
+async function type(element,text,speed=70){
+
+    element.textContent="";
+
+    for(let i=0;i<text.length;i++){
+
+        element.textContent+=text[i];
+
+        await wait(speed);
+
+    }
+
+}
+
+async function erase(element,speed=40){
+
+    while(element.textContent.length){
+
+        element.textContent=
+        element.textContent.slice(0,-1);
+
+        await wait(speed);
+
+    }
+
+}
+
+async function intro(){
+
+    await type(line1,"Hi...");
+
+    await wait(700);
+
+    await erase(line1);
+
+    await wait(300);
+
+    await type(line2,"I'm",70);
+
+    await wait(400);
+
+    await type(name,"Jeremy Zelken",90);
+
+    await wait(400);
+
+    await type(line3,"Welcome.",80);
+
+    await wait(2200);
+
+    await erase(line3);
+
+    await erase(line2);
+
+    enter.style.pointerEvents="auto";
+
+    enter.animate([
+        {opacity:0},
+        {opacity:1}
+    ],{
+        duration:900,
+        fill:"forwards"
+    });
+
+}
+
+intro();
     </script>
   </body>
 </html>
