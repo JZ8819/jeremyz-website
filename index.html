@@ -210,6 +210,32 @@
     margin:0;
 }
 
+.typing {
+  font-family: "Geist Mono", monospace;
+  position: relative;
+}
+
+/* blinking typewriter cursor */
+.typing::after {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 1.1em;
+  background: var(--text);
+  margin-left: 5px;
+  vertical-align: -2px;
+  animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
       /* ─── FOOTER ──────────────────────────────────────────── */
       .footer {
         border-top: 1px solid var(--border);
@@ -302,13 +328,13 @@
 
     <div id="intro">
 
-      <div id="line1"></div>
+      <div id="line1" class="typing"></div>
 
-      <div id="line2"></div>
+      <div id="line2" class="typing"></div>
 
-      <h1 id="name"></h1>
+      <h1 id="name" class="typing"></h1>
 
-      <div id="line3"></div>
+      <div id="line3" class="typing"></div>
 
     </div>
 
@@ -388,9 +414,11 @@ async function type(element,text,speed=70){
 
     element.textContent="";
 
+    element.classList.add("typing");
+
     for(let i=0;i<text.length;i++){
 
-        element.textContent+=text[i];
+        element.textContent += text[i];
 
         await wait(speed);
 
@@ -402,7 +430,7 @@ async function erase(element,speed=40){
 
     while(element.textContent.length){
 
-        element.textContent=
+        element.textContent =
         element.textContent.slice(0,-1);
 
         await wait(speed);
@@ -427,9 +455,13 @@ async function intro(){
 
     await type(name,"Jeremy Zelken",90);
 
+    name.classList.remove("typing");
+
     await wait(400);
 
     await type(line3,"Welcome.",80);
+
+    line3.classList.remove("typing");
 
     await wait(2200);
 
