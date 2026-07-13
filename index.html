@@ -447,9 +447,13 @@ async function intro(){
 
     await erase(line1);
 
+    line1.classList.remove("typing");
+
     await wait(300);
 
     await type(line2,"I'm",70);
+
+    line2.classList.remove("typing");
 
     await wait(400);
 
