@@ -215,9 +215,15 @@
   position: relative;
 }
 
-/* blinking typewriter cursor */
-.typing::after {
-  content: "";
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+      #caret {
   display: inline-block;
   width: 8px;
   height: 1.1em;
@@ -231,6 +237,7 @@
   0%, 50% {
     opacity: 1;
   }
+
   51%, 100% {
     opacity: 0;
   }
@@ -328,15 +335,17 @@
 
     <div id="intro">
 
-      <div id="line1" class="typing"></div>
+  <div id="line1"></div>
 
-      <div id="line2" class="typing"></div>
+  <div id="line2"></div>
 
-      <h1 id="name" class="typing"></h1>
+  <h1 id="name"></h1>
 
-      <div id="line3" class="typing"></div>
+  <div id="line3"></div>
 
-    </div>
+  <div id="caret"></div>
+
+</div>
 
     <a href="writing.html" class="enter" id="enterButton">
       enter
@@ -410,6 +419,8 @@ function wait(ms){
     return new Promise(resolve=>setTimeout(resolve,ms));
 }
 
+const caret = document.getElementById("caret");
+
 async function type(element,text,speed=70){
 
     element.textContent="";
@@ -419,7 +430,8 @@ async function type(element,text,speed=70){
     for(let i=0;i<text.length;i++){
 
         element.textContent += text[i];
-
+        caret.style.position = "absolute";
+        element.appendChild(caret);
         await wait(speed);
 
     }
@@ -447,31 +459,25 @@ async function intro(){
 
     await erase(line1);
 
-    line1.classList.remove("typing");
-
     await wait(300);
 
     await type(line2,"I'm",70);
-
-    line2.classList.remove("typing");
 
     await wait(400);
 
     await type(name,"Jeremy Zelken",90);
 
-    name.classList.remove("typing");
-
     await wait(400);
 
     await type(line3,"Welcome.",80);
-
-    line3.classList.remove("typing");
 
     await wait(2200);
 
     await erase(line3);
 
     await erase(line2);
+
+    caret.style.display = "none";
 
     enter.style.pointerEvents="auto";
 
