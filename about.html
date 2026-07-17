@@ -277,6 +277,10 @@
   animation: activityFade 1s ease forwards;
   animation-delay: 0.3s;
 }
+  #random-activity em {
+  font-style: italic;
+  color: var(--text);
+}
 
 @keyframes activityFade {
   from {
@@ -543,11 +547,20 @@
       sections.forEach((s) => io.observe(s));
 
       const activities = [
-  "Watching Chicago Blackhawks Highlights",
-  "Listening to a Bill Evans album on Vinyl",
-  "Making coffee in my moka pot",
-  "Trying (and failing) to learn a Neil Young song on guitar",
-  "Waiting for my Banana Bread to bake in the oven"
+  "Watching 2013 Chicago Blackhawks Highlights",
+  "Listening to a Bill Evans album on vinyl",
+  "Making coffee in a moka pot",
+  "Trying to learn a Neil Young song on guitar",
+  "Searching for the perfect pen",
+  "Waiting for Banana Bread to bake in the oven",
+  "Browsing the Criterion Collection",
+  "Watching <em>Paris, Texas</em> for the Hundredth time",
+  "Re-reading <em>Invisible Cities</em> by Italo Calvino",
+  "Cooking carbonara pasta",
+  "Snacking on kalamata olives",
+  "Listening to <em>Yankee Hotel Foxtrot</em> by Wilco",
+  "Sitting in the back row of a jazz bar",
+  "Patiently waiting for the NHL season to start",
 ];
 
 const randomActivity = activities[Math.floor(Math.random() * activities.length)];
@@ -555,7 +568,7 @@ const randomActivity = activities[Math.floor(Math.random() * activities.length)]
 const activityElement = document.getElementById("random-activity");
 
 if (activityElement) {
-  activityElement.textContent = randomActivity;
+  activityElement.innerHTML = randomActivity;
 }
     </script>
   </body>
