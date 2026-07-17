@@ -263,6 +263,18 @@
         color: var(--text-muted);
       }
 
+      .current-activity {
+  margin-top: 2.5rem;
+}
+
+.current-activity .section-label {
+  margin-bottom: 0.5rem;
+}
+
+#random-activity {
+  margin-top: 0;
+}
+
       /* ─── RANDOM ACTIVITY ─────────────────────────────────── */
       
       .random-activity {
@@ -432,14 +444,16 @@
               <span>I'm a Chicago-born writer and English Honours student at McGill University in Montreal. 
        </span>Beyond my owne creative work, I serve as an editor for <em>Scrivener Creative Review</em> and <em>The Veg Magazine</em>. 
             </p>
-<p class="about-sub">
-  What I'm probably doing right now...
-</p>
+        
+<div class="current-activity">
 
-<p class="random-activity" id="random-activity"></p>
-          </div>
-        </div>
-      </div>
+  <div class="section-label">
+    what i'm probably doing right now
+  </div>
+
+  <div id="random-activity"></div>
+
+</div>
     </section>
 
     <!-- ─── JS ─────────────────────────────────────────────── -->
