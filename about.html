@@ -272,7 +272,22 @@
 }
 
 #random-activity {
-  margin-top: 0;
+  opacity: 0;
+  transform: translateY(8px);
+  animation: activityFade 1s ease forwards;
+  animation-delay: 0.3s;
+}
+
+@keyframes activityFade {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
       /* ─── RANDOM ACTIVITY ─────────────────────────────────── */
       
