@@ -465,11 +465,11 @@ async function intro(){
 
     await type(name,"Jeremy Zelken",150);
 
-    await wait(1000);
+// Leave cursor blinking for ~5 blinks
+    await wait(2500);
 
+    // Remove cursor
     name.classList.remove("typing");
-
-    enter.style.pointerEvents="auto";
 
     enter.animate([
         {opacity:0},
