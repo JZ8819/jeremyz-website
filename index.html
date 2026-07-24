@@ -461,23 +461,26 @@ async function erase(element,speed=40){
 
 }
 
-async function intro(){
+async function intro() {
 
-    await type(name,"Jeremy Zelken",150);
+    await type(name, "Jeremy Zelken", 160);
 
-    await wait(1000);
+    enter.style.pointerEvents = "auto";
+
+    const fade = enter.animate(
+        [
+            { opacity: 0 },
+            { opacity: 1 }
+        ],
+        {
+            duration: 900,
+            fill: "forwards"
+        }
+    );
+
+    await fade.finished;
 
     name.classList.remove("typing");
-
-    enter.style.pointerEvents="auto";
-
-    enter.animate([
-        {opacity:0},
-        {opacity:1}
-    ],{
-        duration:900,
-        fill:"forwards"
-    });
 
 }
 
