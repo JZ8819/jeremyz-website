@@ -467,7 +467,9 @@ async function intro() {
 
     await type(name," Zelken",100);
 
-    enter.style.pointerEvents = "auto";
+    await wait(2000);
+
+    enter.style.pointerEvents="auto";
 
     const fade = enter.animate(
         [
