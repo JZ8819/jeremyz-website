@@ -463,31 +463,11 @@ async function erase(element,speed=40){
 
 async function intro(){
 
-    await type(line1,"Hi...");
+    await type(name,"Jeremy Zelken",150);
 
-    await wait(700);
+    await wait(1000);
 
-    await erase(line1);
-
-    await wait(300);
-
-    await type(line2,"I'm",70);
-
-    await wait(400);
-
-    await type(name,"Jeremy Zelken",90);
-
-    await wait(400);
-
-    await type(line3,"Welcome.",80);
-
-    await wait(2200);
-
-    await erase(line3);
-
-    await erase(line2);
-
-    caret.style.display = "none";
+    name.classList.remove("typing");
 
     enter.style.pointerEvents="auto";
 
@@ -501,7 +481,7 @@ async function intro(){
 
 }
 
-intro();
+intro();;
     </script>
   </body>
 </html>
