@@ -379,6 +379,26 @@
   white-space: nowrap;
 }
 
+/* ─── WRITING PAGE IMAGE ───────────────────────────── */
+
+.writing-feature {
+  margin-bottom: 3rem;
+  max-width: 650px;
+}
+
+.writing-feature img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.writing-caption {
+  margin-top: 0.65rem;
+  font-size: 11px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
       /* ─── RESPONSIVE ──────────────────────────────────────── */
       @media (max-width: 700px) {
         .nav {
@@ -437,6 +457,17 @@
 <section id="Writing" class="section">
 
   <div class="container">
+
+    <!-- FEATURE IMAGE -->
+    <figure class="writing-feature">
+      <img
+        src="images/AsIStumble.jpg"
+        alt="Description of image"
+      />
+      <figcaption class="writing-caption">
+        Published in SQUID Literary & Arts Magazine, 2026.
+      </figcaption>
+    </figure>
 
     <div class="editorial-group">
 
